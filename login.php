@@ -45,7 +45,7 @@
 				echo "<div class='alert alert-danger'>Email already registered</div>";
 			else{
 				//sign up a new email into database.
-				$query = "INSERT INTO `users`(`email`,`password`) VALUES ('".mysqli_real_escape_string($link,$_POST['email'])."',
+				$query = "INSERT INTO `users`(`name`,`email`,`password`) VALUES ('".mysqli_real_escape_string($link,$_POST['name'])."','".mysqli_real_escape_string($link,$_POST['email'])."',
 				'".md5(md5($_POST['email']).$_POST['password'])."')";
 				mysqli_query($link,$query);
 				echo "<div class='alert alert-success'>You have been signed up.</div>";
